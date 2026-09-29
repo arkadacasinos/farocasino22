@@ -53,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className="bg-background">
       <head>
+        <meta name="yandex-verification" content="6c87b3440e91e90e" />
         {/* HEAD_SLOT: reserved for future verification/meta tags — do not add third-party scripts here */}
       </head>
       <body className={`${_inter.variable} ${_playfair.variable} antialiased font-sans`}>
