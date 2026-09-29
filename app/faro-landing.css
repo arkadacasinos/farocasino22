@@ -1,0 +1,400 @@
+/*
+  Custom stylesheet for the Faro Casino landing page.
+  Class names use a project-specific "fq82-" prefix instead of generic
+  utility names (e.g. .btn, .card) and every block is a flex-column child,
+  so sections can be reordered in app/page.tsx without breaking the layout.
+  Mobile-first: base rules target 375px (iPhone SE) and widen with min-width queries.
+*/
+
+.fq82-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.fq82-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid color-mix(in oklch, var(--foreground) 10%, transparent);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in oklch, var(--background) 92%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.fq82-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.fq82-brand-mark {
+  color: var(--fq82-gold);
+}
+
+.fq82-nav {
+  display: none;
+}
+
+.fq82-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-md);
+  background: var(--fq82-gold);
+  color: var(--fq82-on-gold);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.fq82-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fq82-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1.25rem 2.5rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--fq82-emerald) 14%, var(--background)) 0%,
+    var(--background) 100%
+  );
+}
+
+.fq82-hero-media {
+  order: -1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.fq82-hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fq82-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fq82-eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--fq82-gold) 18%, transparent);
+  color: color-mix(in oklch, var(--fq82-gold) 70%, var(--foreground));
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.fq82-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.fq82-hero p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: color-mix(in oklch, var(--foreground) 82%, transparent);
+  max-width: 42rem;
+}
+
+.fq82-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.fq82-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--fq82-gold);
+  color: var(--fq82-on-gold);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.fq82-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in oklch, var(--foreground) 20%, transparent);
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.fq82-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.25rem 1.25rem;
+  border-top: 1px solid color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+
+.fq82-section-media {
+  order: -1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.fq82-section-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fq82-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fq82-section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 4vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.fq82-section p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: color-mix(in oklch, var(--foreground) 82%, transparent);
+}
+
+.fq82-advantages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fq82-advantage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.125rem;
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--fq82-emerald) 8%, var(--background));
+  border: 1px solid color-mix(in oklch, var(--fq82-emerald) 16%, transparent);
+}
+
+.fq82-advantage strong {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+}
+
+.fq82-advantage span {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: color-mix(in oklch, var(--foreground) 78%, transparent);
+}
+
+.fq82-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.25rem 1.25rem;
+  border-top: 1px solid color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+
+.fq82-faq h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 4vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.fq82-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fq82-faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+
+.fq82-faq-item summary {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.fq82-faq-item p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: color-mix(in oklch, var(--foreground) 78%, transparent);
+}
+
+.fq82-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.25rem 2.5rem;
+  border-top: 1px solid color-mix(in oklch, var(--foreground) 10%, transparent);
+  background: color-mix(in oklch, var(--fq82-emerald) 6%, var(--background));
+}
+
+.fq82-footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fq82-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fq82-hashtags li {
+  display: inline-flex;
+  padding: 0.375rem 0.625rem;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--foreground) 6%, transparent);
+  color: color-mix(in oklch, var(--foreground) 75%, transparent);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.fq82-footer-note {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: color-mix(in oklch, var(--foreground) 60%, transparent);
+  max-width: 48rem;
+}
+
+.fq82-footer-copy {
+  font-size: 0.75rem;
+  color: color-mix(in oklch, var(--foreground) 50%, transparent);
+}
+
+@media (min-width: 640px) {
+  .fq82-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .fq82-nav a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: color-mix(in oklch, var(--foreground) 75%, transparent);
+  }
+
+  .fq82-nav a:hover {
+    color: var(--foreground);
+  }
+
+  .fq82-hero {
+    flex-direction: row;
+    align-items: center;
+    padding: 3rem 2.5rem;
+  }
+
+  .fq82-hero-media {
+    order: 0;
+    flex: 1;
+  }
+
+  .fq82-hero-content {
+    flex: 1;
+  }
+
+  .fq82-section {
+    flex-direction: row;
+    align-items: center;
+    padding: 3rem 2.5rem;
+  }
+
+  .fq82-section-media {
+    order: 0;
+    flex: 0 0 40%;
+  }
+
+  .fq82-section-content {
+    flex: 1;
+  }
+
+  .fq82-section--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .fq82-advantages-grid {
+    flex-direction: row;
+  }
+
+  .fq82-advantage {
+    flex: 1;
+  }
+
+  .fq82-footer {
+    padding: 2.5rem 2.5rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fq82-hero,
+  .fq82-section,
+  .fq82-footer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .fq82-hero,
+  .fq82-section {
+    max-width: 72rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
